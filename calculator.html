@@ -27,7 +27,6 @@
   </style>
 </head>
 
-<!-- 계산기 버튼 구현 -->
 <body>
   <input readonly id="operator" />
   <input readonly type="number" id="result" />
@@ -63,12 +62,10 @@
     const $result = document.querySelector("#result");
     const onClickNumber = (event) => {
       if (!operator) {
-        // 비어있다
         numOne += event.target.textContent;
         $result.value += event.target.textContent;
         return;
       }
-      // 비어있지 않다
       if (!numTwo) {
         $result.value = "";
       }
@@ -94,6 +91,7 @@
         alert("숫자를 먼저 입력하세요.");
       }
     };
+
     document
       .querySelector("#plus")
       .addEventListener("click", onClickOperator("+"));
